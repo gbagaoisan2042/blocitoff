@@ -1,0 +1,38 @@
+  <div class="container">
+    <div class="header">
+      <ul class="nav nav-pills pull-right">
+        <li><a href="#">Sign In</a></li>
+        <li><a href="#">Sign up</a></li>
+        <li><a ui-sref="newlist">New List</a></li>
+      </ul>
+      <h3 class="text-muted">BlocItOff</h3>
+    </div>
+
+      <h4>My Lists</h4>
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>Days left</th>
+            <th>Complete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="item in listItems.todoItems"  ng-class="{'item-done': item.complete}">
+            <td>{{ item.name }}</td>
+            <td>{{ item.daysLeft }}</td>
+            <td><div class="checkbox">
+                  <label>
+                    <input type="checkbox" ng-model="item.complete">
+                  </label>
+                </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <a href="#" class="btn btn-primary">New item</a>
+
+
+  </div> <!-- /container -->
